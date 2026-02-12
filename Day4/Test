@@ -1,0 +1,19 @@
+package Java;
+
+public class Oddnumbers {
+
+	public static void main(String[] args) {
+		
+		int num = 21;
+		while(num <= 40) {
+			if((num % 2 == 0)) {
+				num++;
+				continue;
+			}
+			System.out.println(num);
+			num++;
+		}
+
+	}
+
+}
