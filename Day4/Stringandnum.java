@@ -4,21 +4,23 @@ import java.util.Scanner;
 
 public class Stringandnum {
 	
-	public static void joinMethod(String value, int number) {
-		System.out.println(value + number);
+	public static String joinMethod(String name, int num) {
+		return name + num; 
+		
 	}
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the value");
-		String value = scan.next();
+		String name = scan.next();
 		
 		System.out.println("Enter the number");
-		int number = scan.nextInt();
+		int num = scan.nextInt();
 		
-		joinMethod(value, number);
+		System.out.println(joinMethod(name, num));
 
 
+		scan.close();
 	}
 
 }
