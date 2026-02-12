@@ -40,7 +40,7 @@ import java.util.Scanner;
 public class Stringandnum {
 	
 	public static String joinMethod(String name, int num) {
-		return name+num; 
+		return name + num; 
 		
 	}
 
