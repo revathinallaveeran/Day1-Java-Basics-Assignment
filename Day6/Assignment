@@ -1,57 +1,58 @@
 1. Explain about class and objects
-Class : Class is a blueprint to used to create objects.
-        A class is a user-defined data type that contains variables and methods.
-Object : An object is an instance of a class that contains data (variables) and behavior (methods).
+Class : A class is a blueprint or template used to create objects. It contains variables (data members) and methods (functions).
+Object : An object is an instance of a class. It represents real-world entities and contains state (variables) and behavior (methods).
+
 
 2. Create a program as  follows:
-
-      Parent Class: Person who can walk,run,sit and has attributes height,weight
-      Child Class: Student who has own method study and also can inherit the methods and properties from Person
-     Print the results
+		Parent Class: Person who can walk,run,sit and has attributes height,weight
+      	Child Class: Student who has own method study and also can inherit the methods and properties from Person
+     	Print the results
 
 Problem: 
 package Java;
 
-class Person{
-	double height;
-	double weight;
-	
-	public void walk(){
-		System.out.println("Person able to walk");
-	}
-	
-	public void run() {
-		System.out.println("Person able to run");
-	}
-	
-	public void sit() {
-		System.out.println("Person who can sit");
-	}
-	
+class Person {
+    double height;
+    double weight;
+
+    public void walk() {
+        System.out.println("Person able to walk");
+    }
+
+    public void run() {
+        System.out.println("Person able to run");
+    }
+
+    public void sit() {
+        System.out.println("Person who can sit");
+    }
 }
-public class Inheritance extends Person {
-	
-	 void study() {
-			System.out.println("Student Method");
-		}
-	 
-	 void display() {
-	        System.out.println("Height: " + height);
-	        System.out.println("Weight: " + weight);
-	    }
 
-	public static void main(String[] args) {
+class Student extends Person {
 
-		Inheritance Student = new Inheritance();
-		Student.height = 165.5;
-                Student.weight = 60.0;
-        
-		Student.walk();
-		Student.run();
-		Student.sit();
-		Student.study();
-		Student.display();
-	}
+    void study() {
+        System.out.println("Student is studying");
+    }
 
+    void display() {
+        System.out.println("Height: " + height);
+        System.out.println("Weight: " + weight);
+    }
+}
+
+public class Inheritance {
+    public static void main(String[] args) {
+
+        Student student = new Student();
+
+        student.height = 165.5;
+        student.weight = 60.0;
+
+        student.walk();
+        student.run();
+        student.sit();
+        student.study();
+        student.display();
+    }
 }
 
