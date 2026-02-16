@@ -8,4 +8,50 @@ Object : An object is an instance of a class that contains data (variables) and 
       Parent Class: Person who can walk,run,sit and has attributes height,weight
       Child Class: Student who has own method study and also can inherit the methods and properties from Person
      Print the results
+
 Problem: 
+package Java;
+
+class Person{
+	double height;
+	double weight;
+	
+	public void walk(){
+		System.out.println("Person able to walk");
+	}
+	
+	public void run() {
+		System.out.println("Person able to run");
+	}
+	
+	public void sit() {
+		System.out.println("Person who can sit");
+	}
+	
+}
+public class Inheritance extends Person {
+	
+	 void study() {
+			System.out.println("Student Method");
+		}
+	 
+	 void display() {
+	        System.out.println("Height: " + height);
+	        System.out.println("Weight: " + weight);
+	    }
+
+	public static void main(String[] args) {
+
+		Inheritance Student = new Inheritance();
+		Student.height = 165.5;
+                Student.weight = 60.0;
+        
+		Student.walk();
+		Student.run();
+		Student.sit();
+		Student.study();
+		Student.display();
+	}
+
+}
+
