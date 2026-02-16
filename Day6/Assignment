@@ -1,1 +1,11 @@
-gfd
+1. Explain about class and objects
+Class : Class is a blueprint to used to create objects.
+        A class is a user-defined data type that contains variables and methods.
+Object : An object is an instance of a class that contains data (variables) and behavior (methods).
+
+2. Create a program as  follows:
+
+      Parent Class: Person who can walk,run,sit and has attributes height,weight
+      Child Class: Student who has own method study and also can inherit the methods and properties from Person
+     Print the results
+Problem: 
