@@ -1,0 +1,66 @@
+1. Create an abstract class School with abstract method takeAttendance(String name) and concrete method ringBell() implement the same in a child class
+
+package Java;
+
+import java.util.Scanner;
+
+abstract class School{
+	
+	abstract void takeAttendance(String name);
+	
+	void ringBell() {
+		System.out.println("The bell is ringing at 12.45 for lunchtime");
+	}
+	
+}
+public class Abstractclass extends School {
+	
+	void takeAttendance(String name) {
+		System.out.println(name  + " is present today");
+		
+	}
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the name");
+		String name = scan.next();
+		Abstractclass method = new Abstractclass();
+		method.takeAttendance(name);
+		method.ringBell();
+
+	}
+
+}
+
+2. Create an Interface Vehicle with methods drive() , applyBrake() and implement the same in a class.
+
+
+package Java;
+
+interface Vehicle{
+	void drive();
+	void applyBrake();
+
+}
+public class Manufacture implements Vehicle {
+
+	public static void main(String[] args) {
+		Vehicle method = new Manufacture();
+		method.drive();
+		method.applyBrake();
+
+	}
+
+	@Override
+	public void drive() {
+		System.out.println("Car is driving");
+		
+	}
+
+	@Override
+	public void applyBrake() {
+		System.out.println("Car is driving....once apply break it will stop.....");
+		
+	}
+
+}
