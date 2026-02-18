@@ -1,0 +1,64 @@
+1. What is the difference between Error and Exception? Explain with examples
+Error : 
+Error is a serious problem that occurs at system level and usually cannot be handled by the program.
+Example : 
+public class Test {
+    public static void main(String[] args) {
+        main(args);   
+    }
+}
+This program throw java.lang.StackOverflowError.
+
+Exception :
+An Exception is a problem that occurs during program execution but can be handled using try-catch.
+Example : 
+public class Test {
+    public static void main(String[] args) {
+        try {
+            int a = 10;
+            int b = 0;
+            int result = a / b;
+            System.out.println(result);
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero!");
+        }
+    }
+}
+Output : 
+Cannot divide by zero!
+
+
+2. Write a program for handling exception
+package Java;
+
+import java.util.Scanner;
+
+public class Exceptionhandling{
+	public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            System.out.println("Enter first number:");
+            int num1 = sc.nextInt();
+
+            System.out.println("Enter second number:");
+            int num2 = sc.nextInt();
+
+            int result = num1 / num2;   
+            System.out.println("Result = " + result);
+        }
+        catch (ArithmeticException e) {
+            System.out.println("Error: Cannot divide by zero!");
+        }
+        catch (Exception e) {
+            System.out.println("Invalid input!");
+        }
+        finally {
+            System.out.println("Program executed successfully.");
+        }
+
+        sc.close();
+    }
+
+}
