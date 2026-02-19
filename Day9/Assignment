@@ -1,0 +1,53 @@
+1. Create a List of Strings with student names and print it in sorted order
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class StudentListExample {
+    public static void main(String[] args) {
+
+        List<String> students = new ArrayList<>();
+
+        students.add("Revathi");
+        students.add("Anu");
+        students.add("Karthik");
+        students.add("Divya");
+
+        Collections.sort(students);
+
+
+        System.out.println("Sorted Student Names:");
+        for(String name : students) {
+            System.out.println(name);
+        }
+    }
+}
+
+2. Create a Set of numbers and print the value  only when it is odd number
+import java.util.HashSet;
+import java.util.Set;
+
+public class OddNumberSetExample {
+    public static void main(String[] args) {
+
+        
+        Set<Integer> numbers = new HashSet<>();
+
+       
+        numbers.add(10);
+        numbers.add(15);
+        numbers.add(22);
+        numbers.add(33);
+        numbers.add(40);
+        numbers.add(55);
+
+        System.out.println("Odd Numbers:");
+
+        for(Integer num : numbers) {
+            if(num % 2 != 0) {   // Check odd number
+                System.out.println(num);
+            }
+        }
+    }
+}
