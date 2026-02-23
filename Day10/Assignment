@@ -1,0 +1,27 @@
+1. How map differs from other collection interface? Explain with an example program
+Map differs from other Collection interfaces because it stores elements as key-value pairs and does not extend the Collection interface, whereas List and Set store only individual objects.
+
+Example : public class ListExample {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Apple");  // Duplicate allowed
+        
+        System.out.println(list);
+    }
+}
+
+2. Explain the scenario like when to go with manual testing and automation testing
+Manual Testing :
+Requirement is frequently changing
+UI is not stable
+Short-term project
+Usability testing
+Automation Testing :
+Regression testing
+Repetitive test cases
+Large application
+Performance testing
+Smoke/Sanity testing
+Long-term projects
