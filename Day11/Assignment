@@ -1,0 +1,40 @@
+1. Write possible CSS Selector and XPath for "Click Me" button in following page:
+package org.example;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Main {
+    public static void main(String[] args) throws InterruptedException {
+
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.tutorialspoint.com/selenium/practice/buttons.php");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        // Using CSS
+//        driver.findElement(By.cssSelector("button.btn.btn-primary")).click();
+//        Thread.sleep(2000);
+//        driver.close();
+
+
+        // Using XPath
+        driver.findElement(By.xpath("//button[text()='Click Me']")).click();
+        Thread.sleep(2000);
+        driver.close();
+    }
+}
+
+Possible CSS: 
+button.btn.btn-primary
+button[type='button'].btn-primary
+button[onclick='showDiv()']
+
+Possible Xpath :
+//button[text()='Click Me']
+//button[contains(text(),'Click')]
+//button[@class='btn btn-primary']
+//button[@onclick='showDiv()']
