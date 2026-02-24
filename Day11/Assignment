@@ -29,12 +29,13 @@ public class Main {
 }
 
 Possible CSS: 
-button.btn.btn-primary
-button[type='button'].btn-primary
-button[onclick='showDiv()']
+driver.findElement(By.cssSelector("button.btn.btn-primary")).click();
+driver.findElement(By.cssSelector("button[type='button'].btn-primary")).click();
+driver.findElement(By.cssSelector("button[onclick='showDiv()']")).click();
 
 Possible Xpath :
-//button[text()='Click Me']
-//button[contains(text(),'Click')]
-//button[@class='btn btn-primary']
-//button[@onclick='showDiv()']
+driver.findElement(By.xpath("//button[text()='Click Me']")).click();
+driver.findElement(By.xpath("//button[contains(text(),'Click')]")).click();
+driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
+driver.findElement(By.xpath("//button[@onclick='showDiv()']")).click();
+
