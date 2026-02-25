@@ -1,0 +1,42 @@
+1. WebElement Methods Assignment
+Navigate to "https://www.demoblaze.com/"
+Get the text of "Samsung Galaxy S6" and print
+Click the link of "Samsung Galaxy S6"
+Click "Add to Cart" button
+
+
+Answer : 
+
+package demoproject;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class readText {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.demoblaze.com/");
+		Thread.sleep(2000);
+		WebElement value = driver.findElement(By.className("hrefch"));
+		String text = value.getText();
+		System.out.println("value :" + text);
+		Thread.sleep(2000);
+		WebElement valueClick = driver.findElement(By.className("hrefch"));
+		valueClick.click();
+		Thread.sleep(2000);
+		WebElement addtoCart = driver.findElement(By.xpath("//a[text()='Add to cart']"));
+		addtoCart.click();
+		Thread.sleep(2000);
+		
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
+        
+		driver.close();
+	}
+
+}
