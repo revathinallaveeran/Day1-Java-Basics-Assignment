@@ -1,0 +1,45 @@
+1. Handle the normal alert and prompt alert in this page.
+
+package demoproject;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AlertDemo {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.tutorialspoint.com/selenium/practice/alerts.php");
+		Thread.sleep(2000);
+		
+		// Normal Alert
+		WebElement alerts = driver.findElement(By.xpath("//button[text()='Alert']"));
+		alerts.click();
+		Thread.sleep(2000);
+		Alert alert1 = driver.switchTo().alert();
+		alert1.accept();
+		Thread.sleep(2000);
+		
+		
+		
+		//Prompt Alert
+		driver.findElement(By.xpath("(//button[text()='Click Me'])[3]")).click();
+		Thread.sleep(2000);
+		Alert alert2 = driver.switchTo().alert();
+		System.out.println("pop up opened");
+		Thread.sleep(2000);
+		alert2.sendKeys("Revathi");
+		System.out.println("sendkeys passed");
+		alert2.accept();
+		Thread.sleep(2000);
+		
+		driver.close();
+		
+	}
+
+}
