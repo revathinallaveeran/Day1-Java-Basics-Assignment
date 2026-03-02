@@ -34,3 +34,31 @@ public class WaitAlerts {
 }
 
 2. Navigate to above site, type into the text box after clicking "Click Me to view textbox" button
+
+package demoproject;
+import java.util.Set;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WaitStatement {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		   WebDriver driver = new ChromeDriver();
+
+	        driver.get("https://vinothqaacademy.com/wait-statement/");
+	        driver.manage().window().maximize();
+
+	        driver.findElement(By.xpath("//button[text()='Click Me To View Text Box']")).click();
+	        Thread.sleep(5000);
+	        driver.findElement(By.xpath("//*[@id='firstname']")).sendKeys("Hello");
+	        Thread.sleep(2000);
+	        driver.quit();
+		
+
+	}
+
+}
+
