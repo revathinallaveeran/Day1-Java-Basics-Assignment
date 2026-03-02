@@ -3,12 +3,12 @@ Map differs from other Collection interfaces because it stores elements as key-v
 
 Example : public class ListExample {
     public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
-        list.add("Apple");
-        list.add("Banana");
-        list.add("Apple");  // Duplicate allowed
-        
-        System.out.println(list);
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Apple");
+        map.put(2, "Banana");
+        map.put(3, "Apple"); // Duplicate value allowed, key must be unique
+        System.out.println(map);
+        System.out.println("Value for key 2: " + map.get(2));
     }
 }
 
