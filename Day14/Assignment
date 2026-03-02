@@ -1,0 +1,36 @@
+1. In the above given site click "New Browser window" and focus to the new window
+
+package demoproject;
+import java.util.Set;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WaitAlerts {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://vinothqaacademy.com/multiple-windows/");
+        driver.manage().window().maximize();
+
+        String parentWindow = driver.getWindowHandle();
+        
+        driver.findElement(By.xpath("//button[text()='New Browser Window']")).click();
+        Set<String> allWindows = driver.getWindowHandles();
+        for (String window : allWindows) {
+            if (!window.equals(parentWindow)) {
+                driver.switchTo().window(window);
+                break;
+            }
+        }
+
+        Thread.sleep(2000);
+        driver.close();
+        driver.switchTo().window(parentWindow);
+        driver.quit();
+    }
+}
+
+2. Navigate to above site, type into the text box after clicking "Click Me to view textbox" button
