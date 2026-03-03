@@ -1,0 +1,64 @@
+1. Dragndrop the images from "Photo Manager" to "Trash" also include a logic in ur script to ensure that the dropped item added to the trash.
+
+package demoproject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+
+import java.time.Duration;
+import java.util.List;
+
+public class Draganddrop {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+        driver.get("https://www.globalsqa.com/demo-site/draganddrop/");
+
+      
+        driver.switchTo().frame(driver.findElement(By.cssSelector(".demo-frame")));
+
+       
+        List<WebElement> images = driver.findElements(By.xpath("//ul[@id='gallery']/li"));
+
+        
+        WebElement trash = driver.findElement(By.id("trash"));
+
+        Actions actions = new Actions(driver);
+
+        
+        for (WebElement image : images) {
+
+            String imageName = image.findElement(By.tagName("h5")).getText();
+
+            actions.dragAndDrop(image, trash).perform();
+            Thread.sleep(1000);
+
+            
+            List<WebElement> trashedItems =
+                    driver.findElements(By.xpath("//ul[@id='trash']/li/h5[text()='" + imageName + "']"));
+
+            if (trashedItems.size() > 0) {
+                System.out.println(imageName + " successfully added to Trash");
+            } else {
+                System.out.println(imageName + " NOT added to Trash");
+            }
+
+        Assert.assertTrue(trashedItems.size() > 0, "Item not found in Trash!");
+        }
+
+        driver.quit();
+
+	}
+
+}
+
+2. Mouse hover on "Free EBooks" and then select "Free Machine Learning Ebooks"
+
