@@ -62,3 +62,44 @@ public class Draganddrop {
 
 2. Mouse hover on "Free EBooks" and then select "Free Machine Learning Ebooks"
 
+package demoproject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import java.time.Duration;
+
+public class MouseHoveron {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+        driver.get("https://www.globalsqa.com/");
+        Thread.sleep(2000);
+        Actions actions = new Actions(driver);
+
+        
+        WebElement freeEbooks =
+                driver.findElement(By.xpath("//a[normalize-space()='Free Ebooks']"));
+        Thread.sleep(2000);
+        
+        actions.moveToElement(freeEbooks).perform();
+        Thread.sleep(2000);
+        
+        WebElement machineLearning =
+                driver.findElement(By.xpath("//span[normalize-space()='Free Machine Learning Ebooks']"));
+
+        machineLearning.click();
+        Thread.sleep(2000);
+        System.out.println("Successfully navigated to Free Machine Learning Ebooks page");
+
+        driver.quit();
+    }
+}
+
