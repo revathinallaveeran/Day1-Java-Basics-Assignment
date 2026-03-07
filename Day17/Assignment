@@ -1,0 +1,41 @@
+1. Navigate to https://www.tutorialspoint.com/selenium/practice/frames.php
+switch to iFrame1 and click "Selenium Tutorial" link
+Answer : 
+package demoproject;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class SeleniumInterface {
+
+    public static void main(String[] args) {
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://www.tutorialspoint.com/selenium/practice/frames.php");
+        System.out.println("Found the url");
+        driver.manage().window().maximize();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement frame = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe")));
+        driver.switchTo().frame(frame);
+        System.out.println("I frame found");
+        WebElement link = wait.until(
+                ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Selenium Tutorial')]"))
+        );
+        link.click();
+        System.out.println("Link clicked");
+        driver.quit();
+    }
+}
+
+2. Access https://www.qa-practice.com/elements/checkbox/mult_checkbox
+Print the label of checkbox for any one of the checkbox element using Relative Locators
+Click the "Submit" button using Relative Locators
+
+Answer: 
