@@ -39,3 +39,26 @@ Print the label of checkbox for any one of the checkbox element using Relative L
 Click the "Submit" button using Relative Locators
 
 Answer: 
+package demoproject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
+
+public class RelativeXpath {
+
+    public static void main(String[] args) {
+
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.qa-practice.com/elements/checkbox/mult_checkbox");
+        driver.manage().window().maximize();
+        WebElement checkboxTwo = driver.findElement(By.id("id_checkboxes_1"));
+        WebElement label = driver.findElement(with(By.tagName("label")).above(checkboxTwo));
+        System.out.println("Checkbox Label: " + label.getText());
+        driver.findElement(By.xpath("//input[@id='submit-id-submit']")).click();
+        driver.quit();
+    }
+}
