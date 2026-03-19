@@ -1,0 +1,39 @@
+//1. Write a program to set priority and groups ("NonFunctional","Functional","Adhoc","UI Test") and it should run in alphabetical order
+Answer : 
+package tests;
+
+import org.testng.annotations.Test;
+
+public class Priority {
+
+    @Test(priority = 1, groups = {"Functional"})
+    public void loginTest() {
+        System.out.println("Functional - Login Test");
+    }
+
+    @Test(priority = 2, groups = {"NonFunctional"})
+    public void performanceTest() {
+        System.out.println("NonFunctional - Performance Test");
+    }
+
+    @Test(priority = 3, groups = {"Adhoc"})
+    public void adhocTest() {
+        System.out.println("Adhoc Test");
+    }
+
+    @Test(priority = 4, groups = {"UI Test"})
+    public void uiTest() {
+        System.out.println("UI Test");
+    }
+
+    // Alphabetical execution (no priority)
+    @Test(groups = {"Functional"})
+    public void aTest() {
+        System.out.println("Runs First (Alphabetical)");
+    }
+
+    @Test(groups = {"Functional"})
+    public void bTest() {
+        System.out.println("Runs Second (Alphabetical)");
+    }
+}
